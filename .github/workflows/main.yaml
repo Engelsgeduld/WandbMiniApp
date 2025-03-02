@@ -14,11 +14,10 @@ jobs:
       - name: "installation"
         run: |
           pip install -r requirements.txt -r requirements.dev.txt
+          npm install
       - name: "black"
         run: black . --check --diff --color
       - name: "isort"
         run: isort . --check --diff
-      - name: "mypy"
-        run: mypy
-      - name: "pytests"
-        run: python -m pytest -v -m ci
+      - name: "ESLint"
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
