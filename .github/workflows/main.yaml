@@ -16,7 +16,7 @@ jobs:
           pip install -r requirements.txt -r requirements.dev.txt
           npm install
       - name: "black"
-        run: black . --check --diff --color
+        run: black . --check --diff --color --extend-exclude node_modules
       - name: "isort"
         run: isort . --check --diff
       - name: "ESLint"
