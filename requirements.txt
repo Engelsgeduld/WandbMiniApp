@@ -1,0 +1,6 @@
+wandb~=0.19.7
+flask~=3.0.3
+flask_cors~=3.0.10
+pandas~=2.2.2
+psycopg2~=2.9.9
+python-dotenv~=1.0.1
