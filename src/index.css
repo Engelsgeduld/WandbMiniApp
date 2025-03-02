@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--tg-theme-bg-color, #ffffff);
+  color: var(--tg-theme-text-color, #000000);
+}
+
+/* Скрытие скроллбара в WebKit браузерах (Chrome, Safari) */
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Карточка API-ключа */
+.card {
+  background-color: rgb(55 65 81);
+  padding: 13px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.card span {
+  display: block;
+}
+
+.card span:first-child {
+  font-weight: bold;
+  color: #fff;
+}
+
+.card span:last-child {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Кнопка удаления */
+.delete-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.search-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Стили для поля поиска */
+.search-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px; /* или другое значение */
+}
+
+.chart-container {
+  width: 100%;
+  height: 200px; /* Ограничиваем высоту графика */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 180px; /* Для телефонов делаем график чуть меньше */
+  }
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #1da1f2; /* Цвет Telegram */
+  border: 2px solid #1da1f2;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
