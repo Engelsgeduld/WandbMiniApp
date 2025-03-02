@@ -1,0 +1,23 @@
+name: Main
+
+on: [push, pull_request]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.12.4
+          cache: "pip"
+      - name: "installation"
+        run: |
+          pip install -r requirements.txt -r requirements.dev.txt
+          npm install
+      - name: "black"
+        run: black . --check --diff --color --extend-exclude node_modules
+      - name: "isort"
+        run: isort . --check --diff
+      - name: "ESLint"
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
